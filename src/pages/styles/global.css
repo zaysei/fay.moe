@@ -79,3 +79,13 @@ html {
     display: none;
   }
 }
+
+html.dark {
+  background-color: #414d66;
+  color: #fff;
+}
+
+.dark .nav-links a {
+  color: #fff;
+}
+
