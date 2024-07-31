@@ -1,7 +1,8 @@
 ---
-import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro';
+import BaseLayout from '../layouts/BaseLayout.astro'
 import './styles/global.css';
+
 
 const pageTitle = "About Me";
 
@@ -23,8 +24,6 @@ const textCase = "uppercase"
 ---
 
 <html lang="en">
-    <Header />
-
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -44,15 +43,14 @@ const textCase = "uppercase"
 			}
 		</style>
 	</head>
-	<body>
+	<BaseLayout pageTitle={pageTitle}>
 		<h1>My Astro Site</h1>
 		<h1>{pageTitle}</h1>
         <h2>... and I'm my new site!</h2>
         <p>I am working through the Astro introductory tutorial, and this is my first page</p>
 
         <p>This page will be updated as I move along</p>
-	</body>
-	<p>Here are some facts about me... </p>
+		<p>Here are some facts about me... </p>
 	<li>My name is {identity.name}.</li>
 	<li>I live in {identity.country}.</li>
 	{identity.hobbies.length >= 2 &&
@@ -69,4 +67,5 @@ const textCase = "uppercase"
 	{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
 
 	<Footer />
+	</BaseLayout>
 </html>
