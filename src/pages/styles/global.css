@@ -31,14 +31,14 @@ html {
   width: 40px;
   height: 5px;
   margin-bottom: 10px;
-  background-color: #ff9776;
+  background-color: #76adff;
 }
 
 .nav-links {
   width: 100%;
   top: 5rem;
   left: 48px;
-  background-color: #ff9776;
+  background-color: #76adff;
   display: none;
   margin: 0;
 }
@@ -54,7 +54,7 @@ html {
 }
 
 .nav-links a:hover, a:focus {
-  background-color: #ff9776;
+  background-color: #76adff;
 }
 
 .expanded {
