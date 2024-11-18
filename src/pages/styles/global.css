@@ -1,92 +1,343 @@
-html {
-    background-color: #e5e9f0;
-    color: #3b4252;
-    font-family: sans-serif;
-  }
-  
-  body {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 80ch;
-    padding: 1rem;
-    line-height: 1.5;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  h1 {
-    margin: 1rem 0;
-    font-size: 2.5rem;
-  }
+/* Define Nord color palette */
+:root {
+  --nord0: #2E3440;        /* Polar Night - dark background */
+  --nord1: #3B4252;        /* Polar Night - darker accent */
+  --nord2: #434C5E;        /* Polar Night - medium accent */
+  --nord3: #4C566A;        /* Polar Night - light accent */
+  --nord4: #D8DEE9;        /* Snow Storm - lighter background */
+  --nord5: #E5E9F0;        /* Snow Storm - almost white */
+  --nord6: #ECEFF4;        /* Snow Storm - white */
+  --nord7: #8FBCBB;        /* Frost - cyan */
+  --nord8: #88C0D0;        /* Frost - light cyan */
+  --nord9: #81A1C1;        /* Frost - blue */
+  --nord10: #5E81AC;       /* Frost - dark blue */
+  --nord11: #BF616A;       /* Aurora - red */
+  --nord12: #D08770;       /* Aurora - orange */
+  --nord13: #EBCB8B;       /* Aurora - yellow */
+  --nord14: #A3BE8C;       /* Aurora - green */
+  --nord15: #B48EAD;       /* Aurora - purple */
 
-  /* nav styles */
-.hamburger {
-  padding-right: 20px;
+  --text-dark: var(--nord4);
+  --text-light: var(--nord6);
+  --background-light: var(--nord4);
+  --background-dark: var(--nord0);
+}
+
+/* Base styles */
+html {
+  background: linear-gradient(135deg, var(--nord9), var(--nord10)); /* Apply Nord gradient to entire website */
+  color: var(--text-dark);
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  line-height: 1.6;
+  background: inherit; /* Ensure body inherits gradient from html */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Utility */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Headings */
+h1 {
+  margin: 1.5rem 0;
+  font-size: 3rem;
+  text-align: center;
+  color: var(--text-light);
+}
+
+h2, h3 {
+  margin-top: 2rem;
+  text-align: center;
+  color: var(--text-dark); /* Lightened the heading color for better visibility */
+}
+
+/* Hero Section */
+.hero {
+  width: 100%;
+  max-width: 800px; /* Reduced width to make content look more compact */
+  padding: 4rem 2rem;
+  color: var(--text-dark);
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 3rem auto;
+  background: rgba(129, 161, 193, 0.5); /* Semi-transparent Nord blue background for contrast */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically centers the content */
+  align-items: center;     /* Horizontally centers the content */
+}
+
+.hero h1, .hero h2 {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+  color: var(--text-light);
+}
+
+.hero p {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  color: var(--text-light);
+}
+
+.hero button {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  margin-bottom: 2rem; /* Space between button and greeting content */
+  background-color: var(--nord11);
+  color: var(--text-light);
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.hero button:hover {
+  background-color: var(--nord12);
+  transform: translateY(-3px);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Greeting Container */
+.greeting-container {
+  margin-top: 3rem;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; /* Adds some space between elements */
+}
+
+.greeting-container h2,
+.greeting-container h3,
+.greeting-container button {
+  margin: 0.5rem 0;
+}
+
+/* Updated Button Styling */
+.greeting-container button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--nord14);
+  color: var(--text-dark);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.greeting-container button:hover {
+  background-color: var(--nord13);
+  transform: translateY(-3px);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation Styles */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center the entire navigation container horizontally */
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(129, 161, 193, 0.8);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+  border-radius: 10px; /* Make the highlight for the header more rounded */
+}
+
+/* Container inside the navbar for better control */
+.navbar-container {
+  display: flex;
+  justify-content: center; /* Center the navigation links container */
+  align-items: center;
+  max-width: 1200px; /* Limit the width to avoid it spanning too wide */
+  width: 100%;
+}
+
+/* Navigation links container */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  padding: 0.5rem 1rem; /* Adjust padding for consistent spacing */
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--text-dark);
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, color 0.3s ease, text-decoration 0.3s ease;
+  border-radius: 10px; /* Make the link highlight more rounded */
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  background-color: var(--nord14);
+  color: var(--text-dark);
+  text-decoration: underline;
+}
+
+/* Base styles for hamburger */
+.hamburger {
+  display: none; /* Hidden by default */
+  cursor: pointer;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  background-color: var(--nord8);
+  padding: 0.5rem;
+  border-radius: 50%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .hamburger .line {
   display: block;
-  width: 40px;
-  height: 5px;
-  margin-bottom: 10px;
-  background-color: #76adff;
+  width: 35px;
+  height: 4px;
+  margin-bottom: 8px;
+  background-color: var(--nord6);
+  transition: all 0.3s ease-in-out;
 }
 
-.nav-links {
-  width: 100%;
-  top: 5rem;
-  left: 48px;
-  background-color: #76adff;
-  display: none;
-  margin: 0;
+/* Show hamburger only on small screens */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(129, 161, 193, 0.9); /* Semi-transparent background for contrast */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-links.expanded {
+    display: flex;
+  }
 }
 
-.nav-links a {
-  display: block;
-  text-align: center;
-  padding: 10px 0;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.nav-links a:hover, a:focus {
-  background-color: #76adff;
+/* Navigation styles for larger screens */
+@media screen and (min-width: 769px) {
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
 }
 
 .expanded {
-  display: unset;
-}
-
-@media screen and (min-width: 636px) {
-  .nav-links {
-    margin-left: 5em;
-    display: block;
-    position: static;
-    width: auto;
-    background: none;
-  }
-
-  .nav-links a {
-    display: inline-block;
-    padding: 15px 20px;
-  }
-
-  .hamburger {
-    display: none;
-  }
+  display: block;
 }
 
 html.dark {
-  background-color: #3b4252;
-  color: #e5e9f0;
+  background: linear-gradient(135deg, var(--nord1), var(--nord2));
+  color: var(--text-light);
 }
 
 .dark .nav-links a {
-  color: #e5e9f0;
+  color: var(--text-light);
 }
 
+/* Button Styles */
+.button-group,
+.greeting-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem; /* Add some spacing from the previous content */
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--nord8);
+  color: var(--text-dark);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Reduced shadow for a softer look */
+  min-width: 160px; /* Slightly larger width for uniformity */
+  margin: 0.5rem; /* Adds space between buttons for better layout */
+  flex: 1;
+  max-width: 200px; /* Ensures all buttons have the same maximum width */
+}
+
+button:hover {
+  background-color: var(--nord7);
+  transform: translateY(-3px); /* A slight increase in lift for a more dynamic feel */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Add shadow to enhance hover effect */
+  transition: transform 0.4s ease, background-color 0.4s ease; /* Increase hover animation time */
+}
+
+/* Paragraph Text */
+p, .hero p {
+  color: var(--nord5);
+  line-height: 1.8;
+  text-align: center; /* Center paragraph text */
+} 
+
+/* Section Spacing */
+section {
+  margin-bottom: 4rem; /* Adds margin for better section spacing */
+}
+
+/* Divider */
+.divider {
+  width: 80%;
+  height: 1px;
+  background-color: var(--nord3);
+  margin: 2rem auto;
+  opacity: 0.7; /* Subtle visibility */
+}
+
+/* Footer Styles */
+footer {
+  padding: 2rem;
+  text-align: center; /* Center the footer content */
+  display: flex;       /* Use flexbox to help center the content */
+  justify-content: center;  /* Center horizontally */
+  align-items: center; /* Center vertically if there are multiple items */
+  background: transparent;
+  color: var(--text-light);
+} 
+
+a {
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+  color: var(--nord7); /* Gives a lighter color to links on hover */
+  text-decoration: underline;
+}

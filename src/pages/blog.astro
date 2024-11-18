@@ -1,12 +1,66 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'
+import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogPost from '../components/BlogPost.astro';
 const allPosts = await Astro.glob('./posts/*.md');
 const pageTitle = "My Astro Learning Blog";
 ---
 <BaseLayout pageTitle={pageTitle}>
-  <p>This is where I will post about my journey learning Astro.</p>
-  <ul>
-    {allPosts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
-  </ul>
+  <section class="blog-section">
+    <h2>My Astro Learning Journey</h2>
+    <p>Welcome to my blog, where I share my journey learning Astro. Check out the posts below to see what I've been up to!</p>
+    <div class="blog-list">
+      {allPosts.map((post) => (
+        <a href={post.url} class="blog-button">{post.frontmatter.title}</a>
+      ))}
+    </div>
+  </section>
 </BaseLayout>
+
+<style>
+  .blog-section {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .blog-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 1.5rem; /* Adds space between each post */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h2 {
+    color: var(--nord6);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: var(--nord5);
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .blog-button {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--nord14); /* Aurora green */
+    color: var(--nord6);
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+  }
+
+  .blog-button:hover {
+    background-color: var(--nord8);
+    transform: translateY(-3px);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  }
+</style>

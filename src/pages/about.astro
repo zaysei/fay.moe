@@ -1,62 +1,88 @@
 ---
 import Footer from '../components/Footer.astro';
-import BaseLayout from '../layouts/BaseLayout.astro'
+import BaseLayout from '../layouts/BaseLayout.astro';
 import './styles/global.css';
-
 
 const pageTitle = "About Me";
 
 const identity = {
-	name: "Faye",
-	country: "The United States",
-	hobbies: ["networking", "cyber security", "programming", "movies", "shows", "music"]
-}
+  name: "Faye",
+  country: "The United States",
+  hobbies: ["networking", "cyber security", "programming", "movies", "shows", "music"]
+};
 
-const skills = ["Networking", "Linux Administration", "Cyber Security", "Lua", "Python", "C++", "Go"]
+const skills = ["Networking", "Linux Administration", "Cyber Security", "Lua", "Python", "C++", "Go"];
 
 const happy = true;
 const finished = true;
 
-const skillColor = "#5e81ac";
-const fontWeight = "bold";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-		<style define:vars={{skillColor, fontWeight}}>
-			h1 {
-				color: #81a1c1;
-				font-size: 2rem;
-			}
-			
-			.skill {
-				color: var(--skillColor);
-				font-weight: var(--fontWeight);
-			}
-		</style>
-	</head>
-	<BaseLayout>
-        <h2>... and I'm my new site!</h2>
-        <p>I am working through the Astro introductory tutorial, and this is my first page</p>
+<BaseLayout pageTitle={pageTitle}>
+  <section class="about-section">
+    <h2>... and I'm in my new site!</h2>
+    <p>I am working through the Astro introductory tutorial, and this is my first page.</p>
 
-        <p>This page will be updated as I move along</p>
-		<p>Here are some facts about me... </p>
-	<li>My name is {identity.name}.</li>
-	<li>I live in {identity.country}.</li>
-	{identity.hobbies.length >= 2 &&
-		<li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
-	}
-	<p>My skills are...</p>
-	<ul>
-		{skills.map((skill) => <li class="skill">{skill}</li>)}
-	</ul>
-	{happy && <p>I am happy to be learning Astro!</p>}
+    <p>This page will be updated as I move along.</p>
 
-	{finished && <p>I finished this tutorial!</p>}
-	</BaseLayout>
-</html>
+    <p>Here are some facts about me...</p>
+    <ul class="about-list">
+      <li>My name is {identity.name}.</li>
+      <li>I live in {identity.country}.</li>
+      {identity.hobbies.length >= 2 && (
+        <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}.</li>
+      )}
+    </ul>
+
+    <p>My skills are...</p>
+    <ul class="skills-list">
+      {skills.map((skill) => (
+        <li class="skill">{skill}</li>
+      ))}
+    </ul>
+
+    {happy && <p>I am happy to be learning Astro!</p>}
+    {finished && <p>I finished this tutorial!</p>}
+  </section>
+</BaseLayout>
+
+<style>
+  .about-section {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    text-align: left;
+  }
+
+  h2 {
+    color: #81a1c1;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    color: #d8dee9;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .about-list,
+  .skills-list {
+    list-style-position: inside; /* Align bullets with text */
+    padding-left: 0;            /* Remove default padding */
+    margin: 1rem 0;
+  }
+
+  .about-list li,
+  .skills-list li {
+    margin: 0.75rem 0;
+    font-size: 1rem;
+    color: #eceff4;
+  }
+
+  .skills-list .skill {
+    color: #5e81ac;
+    font-weight: bold;
+  }
+</style>
