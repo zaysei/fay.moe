@@ -409,3 +409,12 @@ a:hover {
   flex-direction: column;
   width: 100%;
 }
+
+.responsive-image {
+  max-width: 100%;  /* Ensure the image doesn’t exceed its container width */
+  height: auto;     /* Maintain aspect ratio */
+  display: block;
+  margin: 0 auto;   /* Center the image */
+  border-radius: 8px; 
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}

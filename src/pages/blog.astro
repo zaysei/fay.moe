@@ -6,8 +6,8 @@ const pageTitle = "My Astro Learning Blog";
 ---
 <BaseLayout pageTitle={pageTitle}>
   <section class="blog-section">
-    <h2>My Astro Learning Journey</h2>
-    <p>Welcome to my blog, where I share my journey learning Astro. Check out the posts below to see what I've been up to!</p>
+    <h2>My Personal Journey</h2>
+    <p>Welcome to my Astro blog, here are my current publications!</p>
     <div class="blog-list">
       {allPosts.map((post) => (
         <a href={post.url} class="blog-button">{post.frontmatter.title}</a>

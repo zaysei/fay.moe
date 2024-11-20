@@ -13,15 +13,12 @@ const identity = {
 
 const skills = ["Networking", "Linux Administration", "Cyber Security", "Lua", "Python", "C++", "Go"];
 
-const happy = true;
-const finished = true;
-
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <section class="about-section">
-    <h2>... and I'm in my new site!</h2>
-    <p>I am working through the Astro introductory tutorial, and this is my first page.</p>
+    <h2>Welcome to my About Me! Here are some things to know...</h2>
+    <p>I am working on tihs website to provide the world with my journey in learning</p>
 
     <p>This page will be updated as I move along.</p>
 
@@ -40,9 +37,6 @@ const finished = true;
         <li class="skill">{skill}</li>
       ))}
     </ul>
-
-    {happy && <p>I am happy to be learning Astro!</p>}
-    {finished && <p>I finished this tutorial!</p>}
   </section>
 </BaseLayout>
 
@@ -82,7 +76,7 @@ const finished = true;
   }
 
   .skills-list .skill {
-    color: #5e81ac;
+    color: #81a1c1;
     font-weight: bold;
   }
 </style>
