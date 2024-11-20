@@ -9,15 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
       navLinks.classList.toggle('expanded');
       document.body.classList.toggle('menu-open');
 
-      // Toggle the hamburger icon animation
-      const lines = hamburger.querySelectorAll('.line');
-      lines[0].style.transform = navLinks.classList.contains('expanded')
-        ? 'rotate(45deg) translate(5px, 5px)'
-        : 'rotate(0deg) translate(0, 0)';
-      lines[1].style.opacity = navLinks.classList.contains('expanded') ? '0' : '1';
-      lines[2].style.transform = navLinks.classList.contains('expanded')
-        ? 'rotate(-45deg) translate(5px, -5px)'
-        : 'rotate(0deg) translate(0, 0)';
+      if (navLinks.classList.contains('expanded')) {
+        hamburger.classList.add('expanded');
+      } else {
+        hamburger.classList.remove('expanded');
+      }
     };
 
     // Add click event to hamburger to toggle the nav
@@ -45,13 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburger.style.display = 'none';
         navLinks.classList.remove('expanded'); // Ensure nav is hidden on larger screens
         document.body.classList.remove('menu-open');
-        
+
         // Reset the hamburger icon
-        const lines = hamburger.querySelectorAll('.line');
-        lines.forEach((line) => {
-          line.style.transform = 'rotate(0deg) translate(0, 0)';
-          line.style.opacity = '1'; // Show middle line again
-        });
+        hamburger.classList.remove('expanded');
       }
     };
 
