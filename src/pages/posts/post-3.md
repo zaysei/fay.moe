@@ -21,3 +21,18 @@ Buying my domain was simple, I used [Porkbun](https://porkbun.com) to purchase a
 Below is an image of the Pages section in the GitHub repository.
 
 <img src="https://cdn.discordapp.com/attachments/954991676177395712/1308664595296157737/SCR-20241119-ufbh.png?ex=673ec461&is=673d72e1&hm=ad964545be46f1908870dc3bdcfbd5429b317bf1185508ec51aa9cf736192449&" alt="GitHub Pages" class="responsive-image" />
+
+<!-- Button to navigate to the next post -->
+<div style="text-align: center; margin-top: 2rem;">
+  <a href="/posts/post-4" style="
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #88C0D0; /* Adjust color as needed */
+    color: #ECEFF4; /* Adjust color as needed */
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;">
+    Next Post →
+  </a>
+</div>

@@ -23,3 +23,18 @@ React is one of the most popular frameworks now, and is very general purpose. It
 In Astro, an "Island" refers to a UI component on a page.
 
 <img src="https://cdn.discordapp.com/attachments/954991676177395712/1308661570645262359/SCR-20241119-uaty.png?ex=673ec190&is=673d7010&hm=1ed3c6ae6f6f948452fd73a1838e2a75cdd50c6476c4b576ed769b2577178e54&" alt="Astro Islands " class="responsive-image" />
+
+<!-- Button to navigate to the next post -->
+<div style="text-align: center; margin-top: 2rem;">
+  <a href="/posts/post-3" style="
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #88C0D0; /* Adjust color as needed */
+    color: #ECEFF4; /* Adjust color as needed */
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;">
+    Next Post →
+  </a>
+</div>

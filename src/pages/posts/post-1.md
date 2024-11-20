@@ -21,3 +21,18 @@ tags: ["astro", "web design project"]
 ## MarkdownPostLayout File
 
 <img src="https://cdn.discordapp.com/attachments/954991676177395712/1308657047709159486/baselayoutastro.png?ex=673ebd59&is=673d6bd9&hm=528c268dd0cbe7b7e3de5da1769eb31e4618907de3d7ee350193446f365fff9a&" alt="MarkdownPostLayout.astro file image" class="responsive-image" />
+
+<!-- Button to navigate to the next post -->
+<div style="text-align: center; margin-top: 2rem;">
+  <a href="/posts/post-2" style="
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #88C0D0; /* Adjust color as needed */
+    color: #ECEFF4; /* Adjust color as needed */
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;">
+    Next Post →
+  </a>
+</div>

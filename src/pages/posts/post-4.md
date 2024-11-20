@@ -67,3 +67,18 @@ As you can see above, it is quite sigificant as showcased by Astro on their webs
   Your browser does not support the video tag.
 </video>
 
+<!-- Button to navigate to the next post -->
+<div style="text-align: center; margin-top: 2rem;">
+  <a href="/posts/post-5" style="
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #88C0D0; /* Adjust color as needed */
+    color: #ECEFF4; /* Adjust color as needed */
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;">
+    Next Post →
+  </a>
+</div>
+
