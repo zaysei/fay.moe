@@ -13,6 +13,15 @@ const pageTitle = "My Astro Learning Blog";
         <a href={post.url} class="blog-button">{post.frontmatter.title}</a>
       ))}
     </div>
+
+    <!-- Subscription Form -->
+    <div class="subscribe-container">
+      <h3>Subscribe to Blog Updates</h3>
+      <form action="/subscribe" method="POST" class="subscribe-form">
+        <input type="email" id="email" name="email" required placeholder="Your email address" />
+        <button type="submit" class="subscribe-button">Subscribe</button>
+      </form>
+    </div>
   </section>
 </BaseLayout>
 
@@ -62,5 +71,46 @@ const pageTitle = "My Astro Learning Blog";
     background-color: var(--nord8);
     transform: translateY(-3px);
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Subscription Container Styling */
+  .subscribe-container {
+    margin-top: 3rem;
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--nord1);
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .subscribe-container h3 {
+    color: var(--nord6);
+  }
+
+  .subscribe-form {
+    margin-top: 1rem;
+  }
+
+  .subscribe-form input[type="email"] {
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid var(--nord3);
+    width: 80%;
+    max-width: 400px;
+  }
+
+  .subscribe-button {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--nord7);
+    color: var(--nord6);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .subscribe-button:hover {
+    background-color: var(--nord8);
   }
 </style>

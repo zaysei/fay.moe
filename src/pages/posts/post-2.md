@@ -19,6 +19,16 @@ There are plenty of frameworks to choose from today with a use case that will fi
 "Islands" for Astro is their way of prioritizing web performance by not running any JavaScript on a page until it is needed; originally, they were the ones to introduce this idea and many frameworks have used it since.
 
 React is one of the most popular frameworks now, and is very general purpose. It is a safe assumption that if you need to make a website, React will do just fine. But with a framework like Astro, you are given the ability to further enhance your website and make it much better for the end user as well as the developer.
+<div style="margin-top: 2rem;">
+  <h3>Top 5 Most Popular Web Frameworks</h3>
+  <ul>
+    <li>React</li>
+    <li>Angular</li>
+    <li>Vue.js</li>
+    <li>ASP.NET Core</li>
+    <li>Django</li>
+  </ul>
+</div>
 
 In Astro, an "Island" refers to a UI component on a page.
 
