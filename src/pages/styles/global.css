@@ -296,11 +296,11 @@ h2, h3 {
   .nav-links {
     display: none;
     flex-direction: column;
-    background: var(--nord2); /* Match background color */
+    background: var(--nord2); 
     width: 100%;
     padding: 1rem;
     position: relative;
-    top: 1rem; /* Position below the hamburger icon */
+    top: 1rem;
     right: 0;
     z-index: 1100;
     transition: transform 0.3s ease-in-out;
@@ -309,7 +309,7 @@ h2, h3 {
   .nav-links.expanded {
     display: flex;
     width: 100%;
-    top: calc(100% + 1rem); /* Position below the hamburger icon */
+    top: calc(100% + 1rem);
     left: 0;
     position: relative;
   }
@@ -334,7 +334,7 @@ h2, h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1.5rem; /* Add some spacing from the previous content */
+  margin-top: 1.5rem; 
 }
 
 button {
@@ -346,30 +346,30 @@ button {
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Reduced shadow for a softer look */
-  min-width: 160px; /* Slightly larger width for uniformity */
-  margin: 0.5rem; /* Adds space between buttons for better layout */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+  min-width: 160px;
+  margin: 0.5rem; 
   flex: 1;
-  max-width: 200px; /* Ensures all buttons have the same maximum width */
+  max-width: 200px; 
 }
 
 button:hover {
   background-color: var(--nord7);
-  transform: translateY(-3px); /* A slight increase in lift for a more dynamic feel */
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Add shadow to enhance hover effect */
-  transition: transform 0.4s ease, background-color 0.4s ease; /* Increase hover animation time */
+  transform: translateY(-3px); 
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.4s ease, background-color 0.4s ease;
 }
 
 /* Paragraph Text */
 p, .hero p {
   color: var(--nord5);
   line-height: 1.8;
-  text-align: center; /* Center paragraph text */
+  text-align: center;
 } 
 
 /* Section Spacing */
 section {
-  margin-bottom: 4rem; /* Adds margin for better section spacing */
+  margin-bottom: 4rem;
 }
 
 /* Divider */
@@ -378,16 +378,16 @@ section {
   height: 1px;
   background-color: var(--nord3);
   margin: 2rem auto;
-  opacity: 0.7; /* Subtle visibility */
+  opacity: 0.7; 
 }
 
 /* Footer Styles */
 footer {
   padding: 2rem;
-  text-align: center; /* Center the footer content */
-  display: flex;       /* Use flexbox to help center the content */
-  justify-content: center;  /* Center horizontally */
-  align-items: center; /* Center vertically if there are multiple items */
+  text-align: center; 
+  display: flex;       
+  justify-content: center;  
+  align-items: center; 
   background: transparent;
   color: var(--text-light);
 } 
@@ -397,24 +397,24 @@ a {
 }
 
 a:hover {
-  color: var(--nord7); /* Gives a lighter color to links on hover */
+  color: var(--nord7); 
   text-decoration: underline;
 }
 
 /* Main Content Styles */
 .main-content {
   display: flex;
-  justify-content: center;  /* Centers content horizontally */
-  align-items: center;      /* Centers content vertically */
+  justify-content: center;  
+  align-items: center;      
   flex-direction: column;
   width: 100%;
 }
 
 .responsive-image {
-  max-width: 100%;  /* Ensure the image doesn’t exceed its container width */
-  height: auto;     /* Maintain aspect ratio */
+  max-width: 100%;  
+  height: auto;     
   display: block;
-  margin: 0 auto;   /* Center the image */
+  margin: 0 auto;  
   border-radius: 8px; 
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
